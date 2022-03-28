@@ -1,0 +1,282 @@
+[
+    {
+        "Station Code": "CE1",
+        "Station Name": "Bayfront",
+        "Opening Date": "14 January 2012"
+    },
+    {
+        "Station Code": "DT16",
+        "Station Name": "Bayfront",
+        "Opening Date": "22 December 2013"
+    },
+    {
+        "Station Code": "NS17",
+        "Station Name": "Bishan",
+        "Opening Date": "7 November 1987"
+    },
+    {
+        "Station Code": "CC15",
+        "Station Name": "Bishan",
+        "Opening Date": "28 May 2009"
+    },
+    {
+        "Station Code": "CC19",
+        "Station Name": "Botanic Gardens",
+        "Opening Date": "8 October 2011"
+    },
+    {
+        "Station Code": "DT9",
+        "Station Name": "Botanic Gardens",
+        "Opening Date": "27 December 2015"
+    },
+    {
+        "Station Code": "EW12",
+        "Station Name": "Bugis",
+        "Opening Date": "4 November 1989"
+    },
+    {
+        "Station Code": "DT14",
+        "Station Name": "Bugis",
+        "Opening Date": "22 December 2013"
+    },
+    {
+        "Station Code": "EW21",
+        "Station Name": "Buona Vista",
+        "Opening Date": "12 March 1988"
+    },
+    {
+        "Station Code": "CC22",
+        "Station Name": "Buona Vista",
+        "Opening Date": "8 October 2011"
+    },
+    {
+        "Station Code": "CC17",
+        "Station Name": "Caldecott",
+        "Opening Date": "8 October 2011"
+    },
+    {
+        "Station Code": "TE9",
+        "Station Name": "Caldecott",
+        "Opening Date": "31 December 2020"
+    },
+    {
+        "Station Code": "NE4",
+        "Station Name": "Chinatown",
+        "Opening Date": "20 June 2003"
+    },
+    {
+        "Station Code": "DT19",
+        "Station Name": "Chinatown",
+        "Opening Date": "22 December 2013"
+    },
+    {
+        "Station Code": "NS25",
+        "Station Name": "City Hall",
+        "Opening Date": "12 December 1987"
+    },
+    {
+        "Station Code": "EW13",
+        "Station Name": "City Hall",
+        "Opening Date": "12 December 1987"
+    },
+    {
+        "Station Code": "NS24",
+        "Station Name": "Dhoby Ghaut",
+        "Opening Date": "12 December 1987"
+    },
+    {
+        "Station Code": "NE6",
+        "Station Name": "Dhoby Ghaut",
+        "Opening Date": "20 June 2003"
+    },
+    {
+        "Station Code": "CC1",
+        "Station Name": "Dhoby Ghaut",
+        "Opening Date": "17 April 2010"
+    },
+    {
+        "Station Code": "CG1",
+        "Station Name": "Expo",
+        "Opening Date": "10 January 2001"
+    },
+    {
+        "Station Code": "DT35",
+        "Station Name": "Expo",
+        "Opening Date": "21 October 2017"
+    },
+    {
+        "Station Code": "NE1",
+        "Station Name": "HarbourFront",
+        "Opening Date": "20 June 2003"
+    },
+    {
+        "Station Code": "CC29",
+        "Station Name": "HarbourFront",
+        "Opening Date": "8 October 2011"
+    },
+    {
+        "Station Code": "NS1",
+        "Station Name": "Jurong East",
+        "Opening Date": "10 March 1990"
+    },
+    {
+        "Station Code": "EW24",
+        "Station Name": "Jurong East",
+        "Opening Date": "5 November 1988"
+    },
+    {
+        "Station Code": "NE7",
+        "Station Name": "Little India",
+        "Opening Date": "20 June 2003"
+    },
+    {
+        "Station Code": "DT12",
+        "Station Name": "Little India",
+        "Opening Date": "27 December 2015"
+    },
+    {
+        "Station Code": "CC10",
+        "Station Name": "MacPherson",
+        "Opening Date": "17 April 2010"
+    },
+    {
+        "Station Code": "DT26",
+        "Station Name": "MacPherson",
+        "Opening Date": "21 October 2017"
+    },
+    {
+        "Station Code": "NS27",
+        "Station Name": "Marina Bay",
+        "Opening Date": "4 November 1989"
+    },
+    {
+        "Station Code": "CE2",
+        "Station Name": "Marina Bay",
+        "Opening Date": "14 January 2012"
+    },
+    {
+        "Station Code": "TE20",
+        "Station Name": "Marina Bay",
+        "Opening Date": "31 December 2021"
+    },
+    {
+        "Station Code": "NS21",
+        "Station Name": "Newton",
+        "Opening Date": "12 December 1987"
+    },
+    {
+        "Station Code": "DT11",
+        "Station Name": "Newton",
+        "Opening Date": "27 December 2015"
+    },
+    {
+        "Station Code": "NS22",
+        "Station Name": "Orchard",
+        "Opening Date": "12 December 1987"
+    },
+    {
+        "Station Code": "TE14",
+        "Station Name": "Orchard",
+        "Opening Date": "31 December 2021"
+    },
+    {
+        "Station Code": "EW16",
+        "Station Name": "Outram Park",
+        "Opening Date": "12 December 1987"
+    },
+    {
+        "Station Code": "NE3",
+        "Station Name": "Outram Park",
+        "Opening Date": "20 June 2003"
+    },
+    {
+        "Station Code": "TE17",
+        "Station Name": "Outram Park",
+        "Opening Date": "31 December 2021"
+    },
+    {
+        "Station Code": "EW8",
+        "Station Name": "Paya Lebar",
+        "Opening Date": "4 November 1989"
+    },
+    {
+        "Station Code": "CC9",
+        "Station Name": "Paya Lebar",
+        "Opening Date": "17 April 2010"
+    },
+    {
+        "Station Code": "CC4",
+        "Station Name": "Promenade",
+        "Opening Date": "17 April 2010"
+    },
+    {
+        "Station Code": "CE0",
+        "Station Name": "Promenade",
+        "Opening Date": "17 April 2010"
+    },
+    {
+        "Station Code": "DT15",
+        "Station Name": "Promenade",
+        "Opening Date": "22 December 2013"
+    },
+    {
+        "Station Code": "NS26",
+        "Station Name": "Raffles Place",
+        "Opening Date": "12 December 1987"
+    },
+    {
+        "Station Code": "EW14",
+        "Station Name": "Raffles Place",
+        "Opening Date": "12 December 1987"
+    },
+    {
+        "Station Code": "NE12",
+        "Station Name": "Serangoon",
+        "Opening Date": "20 June 2003"
+    },
+    {
+        "Station Code": "CC13",
+        "Station Name": "Serangoon",
+        "Opening Date": "28 May 2009"
+    },
+    {
+        "Station Code": "DT10",
+        "Station Name": "Stevens",
+        "Opening Date": "27 December 2015"
+    },
+    {
+        "Station Code": "TE11",
+        "Station Name": "Stevens",
+        "Opening Date": "31 December 2021"
+    },
+    {
+        "Station Code": "EW2",
+        "Station Name": "Tampines",
+        "Opening Date": "16 December 1989"
+    },
+    {
+        "Station Code": "DT32",
+        "Station Name": "Tampines",
+        "Opening Date": "21 October 2017"
+    },
+    {
+        "Station Code": "EW4",
+        "Station Name": "Tanah Merah",
+        "Opening Date": "4 November 1989"
+    },
+    {
+        "Station Code": "CG0",
+        "Station Name": "Tanah Merah",
+        "Opening Date": "4 November 1989"
+    },
+    {
+        "Station Code": "NS9",
+        "Station Name": "Woodlands",
+        "Opening Date": "10 February 1996"
+    },
+    {
+        "Station Code": "TE2",
+        "Station Name": "Woodlands",
+        "Opening Date": "31 December 2019"
+    }
+]
