@@ -1,0 +1,24 @@
+{
+  "name": "mrt_routes_be",
+  "version": "1.0.0",
+  "description": "Find most efficient routes between 2 MRT stations",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server"
+  },
+  "keywords": [],
+  "author": "alvingohhm",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.14.2"
+  }
+}
