@@ -91,7 +91,7 @@ const addOperationProperty = async (stationsData) => {
 
         noPeriod.duration = 1;
         noPeriod.open = true;
-        noPeriod.lineChange = -1;
+        noPeriod.lineChange = 1;
         break;
       case stationCode === "CG" || stationCode === "CE":
         peak.duration = 10;
@@ -108,7 +108,7 @@ const addOperationProperty = async (stationsData) => {
 
         noPeriod.duration = 1;
         noPeriod.open = true;
-        noPeriod.lineChange = -1;
+        noPeriod.lineChange = 1;
         break;
       case stationCode === "DT":
         peak.duration = 10;
@@ -125,7 +125,7 @@ const addOperationProperty = async (stationsData) => {
 
         noPeriod.duration = 1;
         noPeriod.open = true;
-        noPeriod.lineChange = -1;
+        noPeriod.lineChange = 1;
         break;
       case stationCode === "TE":
         peak.duration = 10;
@@ -142,7 +142,7 @@ const addOperationProperty = async (stationsData) => {
 
         noPeriod.duration = 1;
         noPeriod.open = true;
-        noPeriod.lineChange = -1;
+        noPeriod.lineChange = 1;
         break;
       default:
         peak.duration = 10;
@@ -159,7 +159,7 @@ const addOperationProperty = async (stationsData) => {
 
         noPeriod.duration = 1;
         noPeriod.open = true;
-        noPeriod.lineChange = -1;
+        noPeriod.lineChange = 1;
         break;
     }
     station.operation.peak = { ...peak };
