@@ -36,6 +36,7 @@ module.exports = class MRTGraph {
     const queue = [[start]];
     let destinationStation;
     let visitedBlackList = [];
+    let relatedInterchangeCode = [];
     visited.add(start);
 
     //catch edge cases where start or destination is not in station list or not operating
@@ -46,14 +47,12 @@ module.exports = class MRTGraph {
     //if start or destination is not open return empty paths array
     if (
       !this.adjacencyList[start].isOpen(this.period) ||
-      !this.adjacencyList[start].isOpen(this.period)
+      !this.adjacencyList[destination].isOpen(this.period)
     ) {
       return paths;
     }
 
-    if (this.adjacencyList[destination]) {
-      destinationStation = this.adjacencyList[destination];
-    }
+    destinationStation = this.adjacencyList[destination];
 
     //The destination code should not be track in visted because
     //other path might need to end with the station. If it is a
@@ -64,10 +63,10 @@ module.exports = class MRTGraph {
         destinationStation.name !== "Marina Bay" &&
         destinationStation.name !== "HarbourFront"
       ) {
-        visitedBlackList = [
-          ...visitedBlackList,
+        relatedInterchangeCode = [
           ...this.getInterChangeByName(destinationStation.name),
         ];
+        visitedBlackList = [...visitedBlackList, ...relatedInterchangeCode];
       }
     } else {
       visitedBlackList.push(destinationStation.code);
@@ -84,7 +83,14 @@ module.exports = class MRTGraph {
       let neighbours = null;
 
       //if the last station of the dequeue path match the destination then we have a completed path
-      if (currentStationCode === destination) {
+      if (
+        currentStationCode === destination ||
+        relatedInterchangeCode.includes(currentStationCode)
+      ) {
+        if (currentStationCode !== destination) {
+          currentPath.push(destination);
+        }
+
         let duration = 0;
         let stationCode, nextStationCode, nextStation;
 
@@ -116,6 +122,10 @@ module.exports = class MRTGraph {
           duration: duration,
           path: currentPath,
         });
+
+        if (paths.length > 100) {
+          break;
+        }
       } else {
         //if path hasn't complete, then get the neighbour of the last station in the path
         station = this.adjacencyList[currentStationCode];
@@ -136,8 +146,8 @@ module.exports = class MRTGraph {
       return a.duration - b.duration;
     });
 
-    if (sortedPaths.length > 3) {
-      return sortedPaths.slice(0, 3);
+    if (sortedPaths.length > 5) {
+      return sortedPaths.slice(0, 5);
     } else {
       return sortedPaths;
     }
