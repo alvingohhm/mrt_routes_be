@@ -7,7 +7,8 @@ const mrtController = {
   getAllRoutes: (req, res) => {
     try {
       const { start = null, destination = null } = req.query;
-      const { time = null } = req.query;
+      const { time = null, steps = null } = req.query;
+
       let timeSelected, daySelected, peakStartMorn, peakEndMorn;
       let peakStartEve,
         peakEndEve,
@@ -75,8 +76,12 @@ const mrtController = {
       const paths = mrtGraph.getPossiblePaths(start, destination);
       const results = mrtGraph.convertPathsToSteps(paths);
 
-      if (results.length > 0) {
-        res.status(200).json(jsonMessages("yes", "", results));
+      if (paths.length > 0) {
+        if (steps) {
+          res.status(200).json(jsonMessages("yes", "", results));
+        } else {
+          res.status(200).json(jsonMessages("yes", "", paths));
+        }
       } else {
         res
           .status(200)
