@@ -66,39 +66,28 @@ module.exports = class MRTGraph {
       //if the last station of the dequeue path match the destination then we have a completed path
       if (currentStationCode === destination) {
         let duration = 0;
-        let stationCode = "";
+        let stationCode, nextStationCode, nextStation;
 
-        //loop through the completed path to calculate the duration
-        for (let i = 0; i < currentPath.length; i++) {
+        //loop through the completed path till second last in the array to calculate the duration
+        for (let i = 0; i < currentPath.length - 1; i++) {
           stationCode = currentPath[i];
           station = this.adjacencyList[stationCode];
 
-          //if a station is an interchange, we get the next station in the path and compare
-          //if next station is an interchange and the line is different from the current station
-          //then there is a line transfer going on.
-          //for the last station, even if different line we need to check if both station
-          //have the same name ie. DT12 and NE7 both are Little India. if that the case, there isn't a
-          //line trsf as DT12/NE7 is the destination
-          let j = i + 1;
-          if (station.isInterchange()) {
-            if (j < currentPath.length) {
-              let nextStation = this.adjacencyList[currentPath[j]];
-              if (
-                nextStation.isInterchange() &&
-                nextStation.line !== station.line
-              ) {
-                if (nextStation.name !== destinationStation.name) {
-                  //line change duration accounted for
-                  duration += station.lineChange(this.period);
-                }
-              } else {
-                //normal duration per station accounted for
-                duration += station.duration(this.period);
-              }
-            }
-          } else {
+          nextStationCode = currentPath[i + 1];
+          nextStation = this.adjacencyList[nextStationCode];
+
+          //if current station and next station line is the same then it is a normal station travel
+          if (station.line === nextStation.line) {
             //normal duration per station accounted for
             duration += station.duration(this.period);
+          } else {
+            //if current station and next station line is diff then it is a line transfer
+            //need to take care to see if next station is the last station in the path, if it is
+            //then that isn't a line trsf
+            if (nextStation.code !== destinationStation.code) {
+              //line change duration accounted for
+              duration += station.lineChange(this.period);
+            }
           }
         }
 
