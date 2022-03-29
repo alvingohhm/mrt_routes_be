@@ -8,7 +8,7 @@ if (env === "development") {
 
 const baseConfig = {
   env,
-  port: process.env.PORT,
+  port: process.env.PORT || 5000,
 };
 
 module.exports = baseConfig;
