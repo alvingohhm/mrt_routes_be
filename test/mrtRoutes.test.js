@@ -14,8 +14,8 @@ describe("get all routes without specifying time and steps", () => {
     paths = response.body.data;
   });
 
-  test("the response data array should not be greather than 3", () => {
-    expect(paths.length).toBeLessThan(4);
+  test("the response data array should not be greather than 4", () => {
+    expect(paths.length).toBeLessThan(5);
   });
 
   test("the first path in the response data array have a duration of 8", () => {
