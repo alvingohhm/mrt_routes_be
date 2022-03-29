@@ -1,10 +1,10 @@
 const express = require("express");
-const config = require("./config");
 const { dataRouter, mrtRouter } = require("./routers");
 //////////////////////////////////
 // initialize
 //////////////////////////////////
 const app = express();
+const PORT = process.env.PORT || 5000;
 ////////////////////////////////////
 // Middleware
 ////////////////////////////////////
@@ -29,10 +29,10 @@ app.use("/api/mrt", mrtRouter);
 //////////////////////////////////
 // listening
 //////////////////////////////////
-app.listen(config.port, () => {
+app.listen(PORT, () => {
   console.log(`
-  ⚡  Using Environment = ${config.env}
+  ⚡  Using Environment = ${process.env.NODE_ENV}
   🚀  Server is running
-  🔉  Listening on port ${config.port}
+  🔉  Listening on port ${PORT}
   `);
 });
