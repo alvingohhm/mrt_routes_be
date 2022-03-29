@@ -71,9 +71,11 @@ const mrtController = {
       }
 
       mrtGraph.period = period;
-      const result = mrtGraph.getPossiblePaths(start, destination);
-      if (result.length > 0) {
-        res.status(200).json(jsonMessages("yes", "", result));
+      const paths = mrtGraph.getPossiblePaths(start, destination);
+      const results = mrtGraph.convertPathsToSteps(paths);
+
+      if (results.length > 0) {
+        res.status(200).json(jsonMessages("yes", "", results));
       } else {
         res
           .status(200)

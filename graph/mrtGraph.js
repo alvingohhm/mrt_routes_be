@@ -133,4 +133,49 @@ module.exports = class MRTGraph {
       return sortedPaths;
     }
   }
+
+  //method to help convert the possible path (which is an array of mrt station code)
+  //to more readable action steps for user to follows
+  convertPathsToSteps(paths) {
+    let currentStationCode, currentStation;
+    let nextStationCode, nextStation;
+    let results = [];
+    let steps = [];
+    let duration, path;
+    for (const pathObj of paths) {
+      duration = pathObj.duration;
+      path = pathObj.path;
+
+      //for each path loop thru the station code till second last in the array
+      for (let i = 0; i < path.length - 1; i++) {
+        currentStationCode = path[i];
+        currentStation = this.adjacencyList[currentStationCode];
+
+        nextStationCode = path[i + 1];
+        nextStation = this.adjacencyList[nextStationCode];
+
+        //if current station and next station line is the same then it is a normal station travel
+        if (currentStation.line === nextStation.line) {
+          steps.push(
+            `Take ${currentStation.line} line from ${currentStation.name} (${currentStationCode}) to ${nextStation.name} (${nextStationCode})`
+          );
+        } else {
+          //if current station and next station line is diff then it is a line transfer
+          //need to take care to see if next station is the last station in the path, if it is
+          //then that isn't a line trsf
+          if (nextStation.code !== path[path.length - 1]) {
+            steps.push(
+              `Change from ${currentStation.line} line (${currentStationCode}) to ${nextStation.line} line (${nextStationCode})`
+            );
+          }
+        }
+      }
+      results.push({
+        duration: duration,
+        path: steps,
+      });
+      steps = [];
+    }
+    return results;
+  }
 };
