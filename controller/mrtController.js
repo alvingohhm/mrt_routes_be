@@ -1,5 +1,6 @@
 const moment = require("moment");
 const jsonMessages = require("../utils/jsonMessages");
+const stationsData = require("../data/stations.json");
 const mrtGraph = require("../graph/buildGraph");
 
 const mrtController = {
@@ -81,6 +82,29 @@ const mrtController = {
           .status(200)
           .json(
             jsonMessages("yes", "no routes found between the 2 stations", [])
+          );
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  getAllStationsName: (req, res) => {
+    try {
+      const mrtStations = stationsData.map((station) => {
+        return {
+          [station[
+            "Station Code"
+          ]]: `(${station["Station Code"]}) - ${station["Station Name"]}`,
+        };
+      });
+      if (mrtStations.length > 0) {
+        res.status(200).json(jsonMessages("yes", "", mrtStations));
+      } else {
+        res
+          .status(500)
+          .json(
+            jsonMessages("no", "system having trouble getting mrt stations", [])
           );
       }
     } catch (err) {
