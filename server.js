@@ -1,6 +1,6 @@
 const express = require("express");
 const config = require("./config");
-const { dataRouter } = require("./routers");
+const { dataRouter, mrtRouter } = require("./routers");
 //////////////////////////////////
 // initialize
 //////////////////////////////////
@@ -15,6 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 // Data Routes
 //////////////////////////////////////////////////
 app.use("/api/data", dataRouter);
+//////////////////////////////////////////////////
+// Data Routes
+//////////////////////////////////////////////////
+app.use("/api/mrt", mrtRouter);
 
 //////////////////////////////////
 // listening
@@ -24,5 +28,5 @@ app.listen(config.port, () => {
   ⚡  Using Environment = ${config.env}
   🚀  Server is running
   🔉  Listening on port ${config.port}
-`);
+  `);
 });
