@@ -35,7 +35,7 @@ module.exports = class MRTGraph {
     const visited = new Set();
     const queue = [[start]];
     let destinationStation;
-    let visitedBlackList = null;
+    let visitedBlackList = [];
     visited.add(start);
 
     //catch edge cases where start or destination is not in station list or not operating
@@ -60,9 +60,17 @@ module.exports = class MRTGraph {
     //interchange then add the other interchange code to the
     //blacklist
     if (destinationStation.isInterchange()) {
-      visitedBlackList = this.getInterChangeByName(destinationStation.name);
+      if (
+        destinationStation.name !== "Marina Bay" &&
+        destinationStation.name !== "HarbourFront"
+      ) {
+        visitedBlackList = [
+          ...visitedBlackList,
+          ...this.getInterChangeByName(destinationStation.name),
+        ];
+      }
     } else {
-      visitedBlackList = [destinationStation.code];
+      visitedBlackList.push(destinationStation.code);
     }
 
     //each time a new path is exploring it will be added to the queue
