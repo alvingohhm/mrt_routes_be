@@ -7,7 +7,12 @@ const mrtController = {
   getAllRoutes: (req, res) => {
     try {
       const { start = null, destination = null } = req.query;
-      const { time = null, steps = null } = req.query;
+      const { time = null } = req.query;
+      let { steps = false } = req.query;
+
+      if (typeof steps === "string") {
+        steps = steps.toLowerCase() === "true" ? true : false;
+      }
 
       let timeSelected, daySelected, peakStartMorn, peakEndMorn;
       let peakStartEve,
@@ -19,7 +24,9 @@ const mrtController = {
         getDate;
       let period;
       if (!start || !destination) {
-        res.status(400).json(jsonMessages("no", "missing query parameter", []));
+        return res
+          .status(400)
+          .json(jsonMessages("no", "missing query parameter", []));
       }
 
       if (time) {
