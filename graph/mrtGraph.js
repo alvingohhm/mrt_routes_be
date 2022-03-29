@@ -34,13 +34,25 @@ module.exports = class MRTGraph {
     const paths = [];
     const visited = new Set();
     const queue = [[start]];
-    const destinationStation = this.adjacencyList[destination];
+    let destinationStation;
     let visitedBlackList = null;
     visited.add(start);
 
-    //if destination is not open return empty paths array
-    if (!destinationStation.isOpen(this.period)) {
+    //catch edge cases where start or destination is not in station list or not operating
+    //if start or destination code is not in the full station list return empty path
+    if (!this.adjacencyList[start] || !this.adjacencyList[destination]) {
       return paths;
+    }
+    //if start or destination is not open return empty paths array
+    if (
+      !this.adjacencyList[start].isOpen(this.period) ||
+      !this.adjacencyList[start].isOpen(this.period)
+    ) {
+      return paths;
+    }
+
+    if (this.adjacencyList[destination]) {
+      destinationStation = this.adjacencyList[destination];
     }
 
     //The destination code should not be track in visted because
