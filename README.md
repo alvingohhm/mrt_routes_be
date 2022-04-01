@@ -77,7 +77,7 @@ Make sure the data folder contain _StationMap.csv_. The other two json files _in
 
 This csv file contain the Mrt Station Code, Station Name and Opening Date. Station Code and Station Name are the 2 columns important for this project. The stations are list ordely by train line and in sequence. You can add in new station following that order. Order is important because the graph algorithm will connect the station together using the order maintained in the csv file.
 
-![image](https://drive.google.com/uc?export=view&id=1GtG2T9j-0aWeYxwwM8w7Guxi00PUnJam)
+![image](docs/images/StationMap.jpg)
 
 #### Starting the app server
 
@@ -91,7 +91,7 @@ npm run dev
 
 Use Postman to test out the api
 
-![image](https://drive.google.com/uc?export=view&id=16JJ5i01Rgq-RV-syTsnknvIV8ucwd6Iu)
+![image](docs/images/postman.jpg)
 
 ### Deploy to heroku
 
@@ -114,7 +114,7 @@ Use Postman to test out the api
 - [follow the section on Deploy your application to Heroku](https://devcenter.heroku.com/articles/deploying-nodejs)
 - once deploy test out the api using this api endpoint `<YOUR HEROKU WEB ADDRESS>api/mrt/routes?start=CC21&destination=DT14&time=2022-03-28T06:00&steps=true`
 - on chrome install JSONVue extension to view the pretty print json data as shown
-  ![image](https://drive.google.com/uc?export=view&id=12nnge4hAXPp7x7CfxLFthm-9nTwYLw6X)
+  ![image](docs/images/heroku.jpg)
 
 ## How to Use
 
@@ -393,7 +393,7 @@ module.exports = class Station {
 
 The buildGraph.js first read and instantiate each station from stations.json into a station object using the `Station` class. Then it add each station to the `MRTGraph` adjacency list.
 
-![Image](https://drive.google.com/uc?export=view&id=166X5So2BfqEmui5W0I1GyfeENpT50L7q)
+![Image](docs/images/graph1.jpg)
 
 Then the buildGraph loop through the `stations.json` file again, following the sequence connect the station in the adjacencyList by using the `Station` class `addNeighbour` method.
 The `addNeighbour` method add the station object to the current station and also add the current station object to the "added station" so that 2 station maintain the same connection.
@@ -405,7 +405,7 @@ The `addNeighbour` method add the station object to the current station and also
   }
 ```
 
-![Image](https://drive.google.com/uc?export=view&id=1WOqvMbPX2qb5TIkHCgy17KCJEHBdVKLY)
+![Image](docs/images/graph2.jpg)
 
 Throughout the connection, the building process will check if a station is an interchange. If it is, it will find corresponding related stations and add them to each other neighbour.
 ie. NS27 will have neighbour [CE2, TE20], CE2 will have neighbour [NS27, TE20] and TE20 will have neighbour [NS27, CE2]
@@ -467,15 +467,15 @@ ie. NS27 will have neighbour [CE2, TE20], CE2 will have neighbour [NS27, TE20] a
 
 - the graph uses a FIFO queue system to keep track of the path. The queue is an array that contains arrays.
 - The below gives a brief explaination of how the bfs work using the queue and visitedList
-  ![Image](https://drive.google.com/uc?export=view&id=10e3vYXOLW5eRQBiay2fxSjpDbOsnYcUC)
+  ![Image](docs/images/algo1.jpg)
 
-  ![Image](https://drive.google.com/uc?export=view&id=1hzRt2vxw4oZULvFN8jZiUpVw_cXpGdAW)
+  ![Image](docs/images/algo2.jpg)
 
-  ![Image](https://drive.google.com/uc?export=view&id=1y0Pa95XX0z5Ed-0sCUBXU2VKx002CzYL)
+  ![Image](docs/images/algo3.jpg)
 
-  ![Image](https://drive.google.com/uc?export=view&id=1Z0Hu69QEiMdFIufQMfPme5SxVxckX_i6)
+  ![Image](docs/images/algo4.jpg)
 
-  ![Image](https://drive.google.com/uc?export=view&id=1d1MWZuF4v0tW_SqKJQ-9EtmW-op8KBMb)
+  ![Image](docs/images/algo5.jpg)
 
 ## The Journey
 
