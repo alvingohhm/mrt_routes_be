@@ -468,9 +468,13 @@ ie. NS27 will have neighbour [CE2, TE20], CE2 will have neighbour [NS27, TE20] a
 - the graph uses a FIFO queue system to keep track of the path. The queue is an array that contains arrays.
 - The below gives a brief explaination of how the bfs work using the queue and visitedList
   ![Image](https://drive.google.com/uc?export=view&id=10e3vYXOLW5eRQBiay2fxSjpDbOsnYcUC)
-  ![Image](https://drive.google.com/uc?export=view&id=1vViugVzncaZWTBQdeyuwOPkK_ygHZ4Wz)
+
+  ![Image](https://drive.google.com/uc?export=view&id=1hzRt2vxw4oZULvFN8jZiUpVw_cXpGdAW)
+
   ![Image](https://drive.google.com/uc?export=view&id=1y0Pa95XX0z5Ed-0sCUBXU2VKx002CzYL)
+
   ![Image](https://drive.google.com/uc?export=view&id=1Z0Hu69QEiMdFIufQMfPme5SxVxckX_i6)
+
   ![Image](https://drive.google.com/uc?export=view&id=1d1MWZuF4v0tW_SqKJQ-9EtmW-op8KBMb)
 
 ## The Journey
