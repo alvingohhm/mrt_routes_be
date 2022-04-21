@@ -500,5 +500,3 @@ ie. NS27 will have neighbour [CE2, TE20], CE2 will have neighbour [NS27, TE20] a
 [KSP - K Shortest Path package](https://www.npmjs.com/package/k-shortest-path)
 
 [graph-route-finder package](https://www.npmjs.com/package/graph-route-finder)
-
-demo link: https://mrtroutesfinderbe.herokuapp.com/api/mrt/routes?start=CC21&destination=DT14&time=2022-03-28T06:00&steps=true
