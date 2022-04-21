@@ -22,7 +22,7 @@ db/seeders/
 .env.test.local
 .env.production.local
 .env
-playground.js
+*.bk
 
 npm-debug.log*
 yarn-debug.log*

@@ -477,27 +477,6 @@ ie. NS27 will have neighbour [CE2, TE20], CE2 will have neighbour [NS27, TE20] a
 
   ![Image](docs/images/algo5.jpg)
 
-## The Journey
-
-### Total time spend
-
-- 1day - research on Graph datastructure
-- 1day - studying on testing with jest
-- 0.5day - design the data structure and api
-- 1.5day - coding and debugging
-
-### My Thoughts
-
-I choose to implement a back-end express API server because the algorithm requires computation power. The back-end server has the processing power to do so rather than implement it on the front-end, where the primary purpose is to render the UI and display the outcome. With the API in place, any front end, mobile or web, can hook up quickly. In addition, the back-end can scale with multiple servers hooked up to load balancer if we are expecting a vast user base. Caching the query result is another area to explore.
-
-There are also a lot of graph libraries out there that can do the job efficiently, but I choose to implement my algorithm because:
-
-- the MRT stations is unique, and I would have to learn to customize the library to meet the outcome
-- there isn't a lot of documentation regarding the graph library. It will take more time to explore
-- It is more challenging to understand my algorithm and how it works
-
-Generally, I have wanted to do an app like that. I have quite a lot of fun doing this project, it is the best take-home assignment so far, and I learn a lot in the process, especially testing the API with jest.
-
 ## What I could do better
 
 - checking the start time format using regular expression
